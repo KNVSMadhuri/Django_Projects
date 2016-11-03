@@ -1,0 +1,98 @@
+<html>
+<head>
+
+
+</head>
+<style>
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+
+}
+table{margin:100px;border-collapse: collapse;}
+
+div {
+  width: 500px
+
+ }
+ button{
+  float: right;
+  top:20px;
+
+ }
+
+</style>
+</head>
+
+<body>
+<div >
+  <button id = "convert-table" onclick=addRow()> Add row </button>
+</div> 
+
+ <table id="myTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Position</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>00001</td>
+      <td>Madhuri</td>
+      <td>34</td>
+      <td>SSE</td>
+      <td>7000</td>
+    </tr>
+    <tr>
+      <td>00002</td>
+      <td>Ravikanth</td>
+      <td>37</td>
+      <td>SSE</td>
+      <td>8000</td>
+    </tr>
+    <tr>
+      <td>00003</td>
+      <td>Neetu</td>
+      <td>39</td>
+      <td>SSE</td>
+      <td>9000</td>
+    </tr>
+    </table>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+   <script src="/home/affine/Desktop/javascriptcode/jquery.tabletojson.min.js"></script>
+   <script >
+
+ 
+function addRow()
+ {
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    
+    cell1.innerHTML = "00009";
+    cell2.innerHTML = "prasanth";
+    cell3.innerHTML = "36";
+    cell4.innerHTML = "SSE";
+    cell5.innerHTML = "7000";
+}
+
+ $('#convert-table').click( function() {
+  var table = $('#myTable').tableToJSON();
+  console.log(table);
+  alert(JSON.stringify(table));  
+}); 
+    
+</script>
+</body>
+</html>
+
+
